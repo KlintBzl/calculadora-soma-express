@@ -11,31 +11,31 @@ app.get('/soma/:a/:b', (req, res) => {
     const nA = Number(req.params.a);     
     const nB = Number(req.params.b);     
     const r = nA + nB;     
-    res.send(r.toString());
+    res.send("Resposta: " + r.toString());
 });
 
 app.get('/subtracao/:a/:b', (req, res) => {     
     const nA = Number(req.params.a);     
     const nB = Number(req.params.b);     
     const r = nA - nB;     
-    res.send(r.toString());
+    res.send("Resposta: " + r.toString());
 });
 
 app.get('/multiplicacao/:a/:b', (req, res) => {     
     const nA = Number(req.params.a);     
     const nB = Number(req.params.b);     
     const r = nA * nB;     
-    res.send(r.toString());
+    res.send("Resposta: " + r.toString());
 });
 
 app.get('/divisao/:a/:b', (req, res) => {     
-    const nA = Number(req.params.a);     
-    const nB = Number(req.params.b);     
+    const nA = parseFloat(req.params.a);     
+    const nB = parseFloat(req.params.b);     
     const r = nA / nB;   
     if(r != 0){  
-    res.send(r.toString());
+    res.send("Resposta: " + r.toString());
     }else{
-        res.send("")
+        res.send("Não é possível resolver essa divisão!")
     }
 });
 
